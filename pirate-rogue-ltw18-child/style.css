@@ -1,0 +1,21 @@
+/*
+ Theme Name:   Pirate Rogue - LTW18
+ Theme URI:    https://gitlab.com/CptS/ltw2018-wordpress-theme
+ Description:  WordPress Theme für die Landtagswahl 2018 in Bayern basierend auf Pirate-Rogue
+ Author:       Josef Reichardt
+ Author URI:   https://gitlab.com/CptS
+ Template:     pirate-rogue
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         ltwby18, ltw18, orange, purple, sticky-post,  one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, translation-ready
+ Text Domain:  pirate-rogue-ltw18-child
+*/
+#colophon {
+  background-color: #F80;
+  border-color: #F80;
+}
+
+#colophon #site-info a:hover {
+    color: #222;
+}
