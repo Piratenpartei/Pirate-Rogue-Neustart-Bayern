@@ -11,11 +11,125 @@
  Tags:         ltwby18, ltw18, orange, purple, sticky-post,  one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, translation-ready
  Text Domain:  pirate-rogue-ltw18-child
 */
+#site-branding {
+    background: #F80 url(./img/header_background.png) no-repeat center bottom;
+    background-size: 100% auto;
+}
+
+#masthead .site-title {
+    animation: pop-in-up 5s cubic-bezier(0.055, 0.990, 0.065, 0.985) forwards;
+    background: transparent url(./img/neustart.svg) no-repeat center top;
+    background-size: auto 100%;
+
+    text-indent: -10000px;
+}
+
+#masthead .site-title a {
+    display: block;
+}
+
+#masthead .site-description {
+    animation: pop-in-down 5s cubic-bezier(0.055, 0.990, 0.065, 0.985) forwards;
+    background: transparent url(./img/piraten.svg) no-repeat center center;
+    background-size: auto 100%;
+
+    text-indent: -10000px;
+    font-size: 2em;
+    margin: 50px 0;
+}
+
+#masthead #overlay-open {
+    /*top: 4px;*/
+}
+
 #colophon {
-  background-color: #F80;
-  border-color: #F80;
+    background: #c0b4c0 url(./img/footer_background.png) no-repeat left top;
+    background-size: 100% auto;
+
+    border-top: 3px solid #652480;
+}
+
+#colophon #site-info,
+#colophon p {
+    color: #652480;
+}
+
+#colophon #site-info a {
+    color: #222;
 }
 
 #colophon #site-info a:hover {
-    color: #222;
+    color: #000;
+}
+
+.search-open {
+    /*top: 20px;*/
+}
+
+@media screen and (min-width: 66.25em) {
+    #masthead #site-branding {
+        background: transparent none;
+    }
+
+    #masthead {
+        background: #F80 url(./img/header_background.png) no-repeat left bottom;
+        background-size: 100% auto;
+    }
+
+    #masthead .site-title {
+        margin: 70px 0;
+    }
+
+    #masthead .site-title a {
+        margin-left: 7%;
+    }
+
+    #masthead .site-title::after {
+        background-size: 100% auto;
+        right: 0;
+    }
+
+    #masthead .sticky-header .site-title {
+        animation: none;
+        margin: 0;
+    }
+
+    #masthead .sticky-header .site-title a {
+        margin-left: 0;
+    }
+
+    #masthead .sticky-header .site-title::after {
+        right: 1%;
+    }
+
+    #masthead .sticky-header {
+        background: #F80 url(./img/header_background.png) no-repeat left bottom;
+        background-size: 100% auto;
+    }
+
+}
+
+@keyframes pop-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem) scale(.8);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: none;
+    }
+}
+@keyframes pop-in-down {
+    0% {
+        opacity: 0;
+        transform: translateY(4rem) scale(.8);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: none;
+    }
 }
