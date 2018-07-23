@@ -24,6 +24,10 @@
     text-indent: -10000px;
 }
 
+#masthead .overlay-title-wrap .site-title {
+    background-size: auto 100%;
+}
+
 #masthead .site-title a {
     display: block;
 }
@@ -43,10 +47,34 @@
 }
 
 #colophon {
-    background: #c0b4c0 url(./img/footer_background.png) no-repeat left top;
+    background: #b9acba url(./img/footer_background.png) no-repeat left top;
     background-size: 100% auto;
 
     border-top: 3px solid #652480;
+}
+
+#colophon .title-footer {
+    background: transparent url(./img/piraten.svg) no-repeat left top;
+    background-size: 100% auto;
+
+    text-indent: -10000px;
+    position: relative;
+    font-size: 4em;
+    padding-bottom: 0;
+    margin-bottom: 3em;
+    max-width: 400px;
+}
+
+#colophon .title-footer::after {
+    content: '\0000A0';
+    background: transparent url(./img/neustart.svg) no-repeat center top;
+    background-size: 100% auto;
+    font-size: 1em;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
 }
 
 #colophon #site-info,
@@ -54,16 +82,44 @@
     color: #652480;
 }
 
+#colophon .footer-menu ul a,
 #colophon #site-info a {
     color: #222;
 }
 
+#colophon .footer-menu ul a:hover,
 #colophon #site-info a:hover {
     color: #000;
 }
 
-.search-open {
-    /*top: 20px;*/
+#colophon .footer-menu-title {
+    color: #652480;
+}
+
+#desktop-navigation ul.menu li.current-menu-ancestor a,
+#desktop-navigation ul.menu li.focus a,
+#desktop-navigation ul.menu li:focus a,
+#desktop-navigation ul.menu li:hover a {
+    border-bottom-color: #652480;
+}
+
+.desktop-search input[type="submit"]:hover,
+.widget_search input[type="submit"]:hover,
+.post-password-form input[type="submit"]:hover,
+.post-password-form input[type="submit"]:hover .footer-feature-btn:hover {
+    border-color: #652480;
+    background-color: #652480;
+}
+
+.single-post .entry-header h1.entry-title,
+.entry-header h1.entry-title,
+.attachment h1.entry-title,
+.page h1.entry-title,
+h1.entry-title,
+.archive-header h1.archive-title,
+.site-content h1,
+.entry-content h1 {
+    border-color: #652480;
 }
 
 @media screen and (min-width: 66.25em) {
@@ -84,11 +140,6 @@
         margin-left: 7%;
     }
 
-    #masthead .site-title::after {
-        background-size: 100% auto;
-        right: 0;
-    }
-
     #masthead .sticky-header .site-title {
         animation: none;
         margin: 0;
@@ -98,15 +149,14 @@
         margin-left: 0;
     }
 
-    #masthead .sticky-header .site-title::after {
-        right: 1%;
-    }
-
     #masthead .sticky-header {
         background: #F80 url(./img/header_background.png) no-repeat left bottom;
         background-size: 100% auto;
     }
 
+    #masthead .overlay-title-wrap .site-title {
+        background-size: 100% auto;
+    }
 }
 
 @keyframes pop-in-up {
@@ -121,6 +171,7 @@
         transform: none;
     }
 }
+
 @keyframes pop-in-down {
     0% {
         opacity: 0;
