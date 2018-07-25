@@ -1,4 +1,6 @@
 <?php
+include_once "map_widget.php";
+
 /** @noinspection PhpUndefinedFunctionInspection */
 function pirate_rogue_ltw18_enqueue_styles()
 {
@@ -13,6 +15,13 @@ function pirate_rogue_ltw18_enqueue_styles()
 }
 
 add_action('wp_enqueue_scripts', 'pirate_rogue_ltw18_enqueue_styles');
+
+function pirate_rogue_ltw18_widgets()
+{
+    register_widget('Map_Widget');
+}
+
+add_action('widgets_init', 'pirate_rogue_ltw18_widgets');
 
 $blogname = get_bloginfo('name');
 set_theme_mod('pirate_rogue_credit',

@@ -184,3 +184,14 @@ h1.entry-title,
         transform: none;
     }
 }
+
+.widget_pirate_rouge_ltw18_map_widget svg {
+    width: 100%;
+    height: auto;
+}
+.widget_pirate_rouge_ltw18_map_widget svg .regierungsbezierk {
+    cursor: pointer;
+}
+.widget_pirate_rouge_ltw18_map_widget svg .regierungsbezierk:hover {
+    fill: #c9bcca;
+}
