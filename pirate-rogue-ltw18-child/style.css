@@ -19,9 +19,16 @@
 #masthead .site-title {
     animation: pop-in-up 5s cubic-bezier(0.055, 0.990, 0.065, 0.985) forwards;
     background: transparent url(./img/neustart.svg) no-repeat center top;
-    background-size: auto 100%;
+    background-size: 80% auto;
+    background-position-y: center;
 
     text-indent: -10000px;
+}
+
+#masthead .overlay-title-wrap {
+    background: #F80 url(./img/header_background.png) no-repeat center bottom;
+    background-size: 100% auto;
+    padding: 2em 0;
 }
 
 #masthead .overlay-title-wrap .site-title {
@@ -43,7 +50,7 @@
 }
 
 #masthead #overlay-open {
-    /*top: 4px;*/
+    top: 4px;
 }
 
 #colophon {
@@ -122,6 +129,12 @@ h1.entry-title,
     border-color: #652480;
 }
 
+@media screen and (min-width: 25em) {
+    #masthead .site-title {
+        background-size: auto 100%;
+    }
+}
+
 @media screen and (min-width: 66.25em) {
     #masthead #site-branding {
         background: transparent none;
@@ -143,6 +156,8 @@ h1.entry-title,
     #masthead .sticky-header .site-title {
         animation: none;
         margin: 0;
+        background-size: auto 80%;
+        background-position-y: 50%;
     }
 
     #masthead .sticky-header .site-title a {
@@ -189,9 +204,11 @@ h1.entry-title,
     width: 100%;
     height: auto;
 }
+
 .widget_pirate_rouge_ltw18_map_widget svg .regierungsbezierk {
     cursor: pointer;
 }
+
 .widget_pirate_rouge_ltw18_map_widget svg .regierungsbezierk:hover {
     fill: #c9bcca;
 }
