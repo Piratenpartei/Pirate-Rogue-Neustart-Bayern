@@ -212,3 +212,7 @@ h1.entry-title,
 .widget_pirate_rouge_ltw18_map_widget svg .regierungsbezierk:hover {
     fill: #c9bcca;
 }
+
+.pirate_rouge_ltw18_topic_widget img {
+    width: 100%;
+}

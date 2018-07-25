@@ -1,5 +1,6 @@
 <?php
-include_once "map_widget.php";
+include_once "Map_Widget.php";
+include_once "Topic_Widget.php";
 
 /** @noinspection PhpUndefinedFunctionInspection */
 function pirate_rogue_ltw18_enqueue_styles()
@@ -19,6 +20,7 @@ add_action('wp_enqueue_scripts', 'pirate_rogue_ltw18_enqueue_styles');
 function pirate_rogue_ltw18_widgets()
 {
     register_widget('Map_Widget');
+    register_widget('Topic_Widget');
 }
 
 add_action('widgets_init', 'pirate_rogue_ltw18_widgets');

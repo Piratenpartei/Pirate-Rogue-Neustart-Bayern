@@ -1,6 +1,4 @@
 <?php
-
-// Creating the widget
 class Map_Widget extends WP_Widget
 {
 
@@ -9,7 +7,7 @@ class Map_Widget extends WP_Widget
         parent::__construct(
             'pirate_rouge_ltw18_map_widget',
             __('Piraten LTW18 Übersichtskarte', 'pirate_rouge_ltw18_map_widget'),
-            array('description' => __('Bavarian overview map', 'pirate_rouge_ltw18_map_widget'),)
+            array('description' => __('Übersichtskarte der Regierungsbezirke in Bayern', 'pirate_rouge_ltw18_map_widget'),)
         );
     }
 
@@ -29,7 +27,7 @@ class Map_Widget extends WP_Widget
         ?>
         <script>
             (function (id) {
-                const wrapper = document.getElementById(id);
+                var wrapper = document.getElementById(id);
                 [
                     'oberbayern', 'niederbayern', 'oberpfalz', 'oberfranken',
                     'mittelfranken', 'unterfranken', 'schwaben'
