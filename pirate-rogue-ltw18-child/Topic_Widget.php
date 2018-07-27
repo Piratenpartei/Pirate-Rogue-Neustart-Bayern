@@ -25,6 +25,16 @@ class Topic_Widget extends WP_Widget
         echo '<img src="' . get_bloginfo('stylesheet_directory') . '/img/topics/topics.png"/>';
         echo '<a href="" id="' . $id . '" style="position: absolute; top: 0; bottom: 0; left: 0;">&nbsp;</a>';
         echo '</div>';
+        echo '<p class="author-contribution">Abbildung: ';
+        // TODO: list all licenses (only license names)
+        echo '<a href="javascript:void(0)" id="' . $id . '-author-contribution-expand-link">Eine Lizenz, Eine andere Lizenz, &hellip;</a>';
+        echo '<span id="' . $id . '-author-contribution-full" style="display: none";>';
+        // TODO: list all license (details: "lizcense / source / author")
+        echo '<br><a href="">Eine Lizenz</a> / <a href="">Quellwebseite</a> / <a href="">Autor</a>';
+        echo '<br><a href="">Eine andere Lizenz</a> / <a href="">Quellwebseite</a> / <a href="">Autor</a>';
+        echo '<br>[<a href="javascript:void(0)" id="' . $id . '-author-contribution-collapse-link">ausblenden</a>]';
+        echo '</span>';
+        echo '</p>';
         echo $args['after_widget'];
         ?>
         <script>
@@ -81,6 +91,19 @@ class Topic_Widget extends WP_Widget
                     }
                     console.log(x, y, a.href);
                 }, true);
+
+
+                var authorExpand = document.getElementById(id + '-author-contribution-expand-link');
+                var authorCollapse = document.getElementById(id + '-author-contribution-collapse-link');
+                var authorFull = document.getElementById(id + '-author-contribution-full');
+                authorExpand.onclick = function () {
+                    authorExpand.style.display = 'none';
+                    authorFull.style.display = 'inline';
+                };
+                authorCollapse.onclick = function () {
+                    authorExpand.style.display = 'inline';
+                    authorFull.style.display = 'none';
+                };
             }('<?php echo $id; ?>'))
         </script>
         <?php

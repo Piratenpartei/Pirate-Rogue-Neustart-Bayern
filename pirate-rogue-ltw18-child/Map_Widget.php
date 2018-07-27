@@ -23,6 +23,14 @@ class Map_Widget extends WP_Widget
         echo '<div id="' . $id . '">';
         echo file_get_contents(__DIR__ . "/img/map/map.svg");
         echo '</div>';
+        echo '<p class="author-contribution">';
+        echo '<a href="https://gitlab.com/CptS/ltw2018-wordpress-theme/tree/master/pirate-rogue-ltw18-child/img/map" target="_blank">Abbildung</a>';
+        echo ' basierend auf ';
+        echo '<a href="https://commons.wikimedia.org/wiki/File:Bayern-Regierungsbezirke.svg" target="_blank">Wikimedia Commons</a> / ';
+        echo '<a href="https://commons.wikimedia.org/wiki/User:Willtron" target="_blank">Willtron</a> / ';
+        echo '<a href="https://commons.wikimedia.org/wiki/User:NordNordWest" target="_blank">NNW</a> / ';
+        echo '<a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank">CC BY-SA 3.0</a>';
+        echo '</p>';
         echo $args['after_widget'];
         ?>
         <script>

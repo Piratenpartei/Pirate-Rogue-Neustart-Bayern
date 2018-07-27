@@ -213,6 +213,8 @@ h1.entry-title,
     fill: #c9bcca;
 }
 
-.pirate_rouge_ltw18_topic_widget img {
-    width: 100%;
+.widget_pirate_rouge_ltw18_topic_widget .author-contribution,
+.widget_pirate_rouge_ltw18_map_widget .author-contribution {
+    font-size: 0.5em;
+    text-align: right;
 }
