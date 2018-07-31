@@ -16,6 +16,13 @@
     background-size: 100% auto;
 }
 
+#overlay-open {
+    top: 3px;
+}
+#overlay-close {
+    top: 5px;
+}
+
 #masthead .site-title {
     animation: pop-in-up 5s cubic-bezier(0.055, 0.990, 0.065, 0.985) forwards;
     background: transparent url(./img/neustart.svg) no-repeat center top;
@@ -26,13 +33,13 @@
 }
 
 #masthead .overlay-title-wrap {
-    background: #F80 url(./img/header_background.png) no-repeat center bottom;
+    background: #f39200 url(./img/header_background.png) no-repeat center bottom;
     background-size: 100% auto;
-    padding: 2em 0;
+    padding: 1em 0;
 }
 
 #masthead .overlay-title-wrap .site-title {
-    background-size: auto 100%;
+    background-size: 90% auto;
 }
 
 #masthead .site-title a {
@@ -49,8 +56,8 @@
     margin: 50px 0;
 }
 
-#masthead #overlay-open {
-    top: 4px;
+.container-all main {
+    margin-bottom: 3em;
 }
 
 #colophon {
@@ -133,6 +140,10 @@ h1.entry-title,
     #masthead .site-title {
         background-size: auto 100%;
     }
+
+    #masthead .overlay-title-wrap .site-title {
+        background-size: auto 100%;
+    }
 }
 
 @media screen and (min-width: 66.25em) {
@@ -145,8 +156,18 @@ h1.entry-title,
         background-size: 100% auto;
     }
 
+    #overlay-open {
+        top: 34px;
+    }
+    #overlay-close {
+        top: 40px;
+    }
+
     #masthead .site-title {
         margin: 70px 0;
+    }
+    #masthead .overlay-title-wrap .site-title {
+        margin: 10px;
     }
 
     #masthead .site-title a {
