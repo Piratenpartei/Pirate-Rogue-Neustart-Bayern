@@ -21,7 +21,7 @@ class Topic_Widget extends WP_Widget
             echo $args['before_title'] . $title . $args['after_title'];
         }
         $id = 'pirate_rouge_ltw18_topic_wrapper_' . uniqid();
-        echo '<div id="' . $id . '-wrapper" style="position: relative;">';
+        echo '<div id="' . $id . '-wrapper" style="position: relative; text-align: center;">';
         echo '<img src="' . get_bloginfo('stylesheet_directory') . '/img/topics/topics.png"/>';
         echo '<a href="" id="' . $id . '" style="position: absolute; top: 0; bottom: 0; left: 0;">&nbsp;</a>';
         echo '</div>';
@@ -42,10 +42,16 @@ class Topic_Widget extends WP_Widget
                 var wrapper = document.getElementById(id + '-wrapper');
                 var a = wrapper.querySelector('a');
                 var img = wrapper.querySelector('img');
-                a.style.width = img.width + 'px';
-                img.onload = function () {
+
+                function applyImageSize() {
                     a.style.width = img.width + 'px';
-                };
+                    a.style.left = ((wrapper.offsetWidth - img.width) / 2) + 'px';
+                }
+
+                applyImageSize();
+                img.onload = applyImageSize;
+                window.addEventListener('resize', applyImageSize, true);
+
                 var prevHref;
                 var links = {
                     '/wahlprogramm-2018/familienpolitik': [
@@ -89,6 +95,7 @@ class Topic_Widget extends WP_Widget
                             a.style.display = 'block';
                         }, 1);
                     }
+                    // TODO: remove console.log
                     console.log(x, y, a.href);
                 }, true);
 

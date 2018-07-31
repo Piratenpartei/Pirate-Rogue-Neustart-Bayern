@@ -136,6 +136,10 @@ h1.entry-title,
     border-color: #652480;
 }
 
+.widget h2.widget-title {
+    border-top-width: 0;
+}
+
 @media screen and (min-width: 25em) {
     #masthead .site-title {
         background-size: auto 100%;
@@ -192,6 +196,10 @@ h1.entry-title,
 
     #masthead .overlay-title-wrap .site-title {
         background-size: 100% auto;
+    }
+
+    .widget h2.widget-title {
+        border-top-width: 1px;
     }
 }
 
