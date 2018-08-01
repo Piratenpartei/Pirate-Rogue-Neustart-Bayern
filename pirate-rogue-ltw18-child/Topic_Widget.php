@@ -23,94 +23,95 @@ class Topic_Widget extends WP_Widget
         $id = 'pirate_rouge_ltw18_topic_wrapper_' . uniqid();
         echo '<div id="' . $id . '-wrapper" style="position: relative; text-align: center;">';
         echo '<img src="' . get_bloginfo('stylesheet_directory') . '/img/topics/topics.png"/>';
-        echo '<a href="" id="' . $id . '" style="position: absolute; top: 0; bottom: 0; left: 0;">&nbsp;</a>';
+        echo '<div id="' . $id . '-links" style="position: absolute; top: 0; bottom: 0; left: 0;">&nbsp;</div>';
         echo '</div>';
-        echo '<p class="author-contribution">Abbildung: ';
-        // TODO: list all licenses (only license names)
-        echo '<a href="javascript:void(0)" id="' . $id . '-author-contribution-expand-link">Eine Lizenz, Eine andere Lizenz, &hellip;</a>';
-        echo '<span id="' . $id . '-author-contribution-full" style="display: none";>';
-        // TODO: list all license (details: "lizcense / source / author")
-        echo '<br><a href="">Eine Lizenz</a> / <a href="">Quellwebseite</a> / <a href="">Autor</a>';
-        echo '<br><a href="">Eine andere Lizenz</a> / <a href="">Quellwebseite</a> / <a href="">Autor</a>';
-        echo '<br>[<a href="javascript:void(0)" id="' . $id . '-author-contribution-collapse-link">ausblenden</a>]';
-        echo '</span>';
+        echo '<p class="author-contribution">Abbildungen: ';
+        echo '<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de" target="_blank">CC0</a>';
+        echo ' / ';
+        echo '<a href="https://pixabay.com" target="_blank">Pixabay</a> / ';
+        echo '<a href="https://pixabay.com/de/frau-m%C3%A4dchen-freiheit-gl%C3%BCcklich-591576/" target="_blank">[1]</a> '
+            . '<a href="https://pixabay.com/de/users/jill111-334088/" target="_blank">jill111</a> / ';
+        echo '<a href="https://pixabay.com/de/fr%C3%A4nkische-schweiz-walberla-h%C3%BCgel-1445828/" target="_blank">[2]</a> '
+            . '<a href="https://pixabay.com/de/users/markusspiske-670330/" target="_blank">markusspiske</a> / ';
+        echo '<a href="https://pixabay.com/de/kabel-technik-rot-gelb-stecker-2755783/" target="_blank">[3]</a> '
+            . '<a href="https://pixabay.com/de/users/fotofixautomat-6459159/" target="_blank">fotofixautomat</a> / ';
+        echo '<a href="https://pixabay.com/de/sch%C3%BCler-eingabe-tastatur-text-849825/" target="_blank">[4]</a> '
+            . '<a href="https://pixabay.com/de/users/StartupStockPhotos-690514/" target="_blank">StartupStockPhotos</a>';
         echo '</p>';
         echo $args['after_widget'];
         ?>
         <script>
             (function (id) {
-                var wrapper = document.getElementById(id + '-wrapper');
-                var a = wrapper.querySelector('a');
-                var img = wrapper.querySelector('img');
+                var imgWrapper = document.getElementById(id + '-wrapper');
+                var linksWrapper = document.getElementById(id + '-links');
+                var img = imgWrapper.querySelector('img');
+                var links = {
+                    '/wahlprogramm-2018/familienpolitik': [
+                        [2, 6, 36, 11],
+                        [5, 11, 15, 16]
+                    ],
+                    '/wahlprogramm-2018/freiheit-sicherheit-rechtsstaat': [
+                        [42, 1, 100, 11]
+                    ],
+                    '/wahlprogramm-2018/heimat': [
+                        [28, 16, 43, 26],
+                        [43, 19, 57, 24]
+                    ],
+                    '/wahlprogramm-2018/digitale-wirtschaft': [
+                        [59, 25, 66, 30],
+                        [66, 26, 92, 33]
+                    ],
+                    '/wahlprogramm-2018/bezahlbarer-wohnraum': [
+                        [5, 33, 33, 40],
+                        [6, 40, 16, 46]
+                    ],
+                    '/wahlprogramm-2018/digitales-bayern': [
+                        [76, 39, 97, 46],
+                        [79, 46, 94, 55]
+                    ],
+                    '/wahlprogramm-2018/fluch': [
+                        [10, 55, 20, 63],
+                        [20, 58, 37, 62]
+                    ],
+                    '/wahlprogramm-2018/verkehrspolitik': [
+                        [71, 62, 80, 68],
+                        [62, 68, 98, 72]
+                    ],
+                    '/wahlprogramm-2018/zukunftsgerechte-bildung': [
+                        [25, 75, 39, 84],
+                        [39, 77, 79, 83]
+                    ],
+                    // TODO: "Energiewirtschaft" --> "Energie"????
+                    '/wahlprogramm-2018/energie': [
+                        [2, 83, 11, 88],
+                        [2, 88, 43, 92]
+                    ],
+                    '/wahlprogramm-2018/verbraucher-und-datenschutz': [
+                        [51, 90, 98, 97]
+                    ]
+                };
 
                 function applyImageSize() {
-                    a.style.width = img.width + 'px';
-                    a.style.left = ((wrapper.offsetWidth - img.width) / 2) + 'px';
+                    linksWrapper.style.width = img.width + 'px';
+                    linksWrapper.style.left = ((imgWrapper.offsetWidth - img.width) / 2) + 'px';
+
+                    linksWrapper.innerHTML = '';
+                    for (var link in links) {
+                        if (links.hasOwnProperty(link)) {
+                            for (var i = 0; i < links[link].length; i++) {
+                                var coords = links[link][i];
+                                linksWrapper.innerHTML += '<a href="' + link + '" ' +
+                                    'style="display: block; position: absolute; ' +
+                                    'left: ' + coords[0] + '%; top: ' + coords[1] + '%;' +
+                                    'width: ' + (coords[2] - coords[0]) + '%; height: ' + (coords[3] - coords[1]) + '%;">&nbsp;</a>';
+                            }
+                        }
+                    }
                 }
 
                 applyImageSize();
                 img.onload = applyImageSize;
                 window.addEventListener('resize', applyImageSize, true);
-
-                var prevHref;
-                var links = {
-                    '/wahlprogramm-2018/familienpolitik': [
-                        [0, 6, 35, 10],
-                        [3, 8, 12, 15]
-                    ],
-                    '/wahlprogramm-2018/freiheit-sicherheit-rechtsstaat': [
-                        [42, 0, 100, 10]
-                    ]
-                    // TODO: insert all topics with coordinates
-                };
-
-                function getHref(x, y) {
-                    for (var link in links) {
-                        if (links.hasOwnProperty(link)) {
-                            for (var i = 0; i < links[link].length; i++) {
-                                var coords = links[link][i];
-                                if (x >= coords[0] && x <= coords[2]
-                                    && y >= coords[1] && y <= coords[3]) {
-                                    return link;
-
-                                }
-                            }
-                        }
-                    }
-                    return '#';
-                }
-
-                a.addEventListener('mousemove', function (e) {
-                    var rect = e.target.getBoundingClientRect();
-                    var x = Math.round((e.clientX - rect.left) / img.width * 100);
-                    var y = Math.round((e.clientY - rect.top) / img.height * 100);
-
-
-                    a.href = getHref(x, y);
-
-                    if (prevHref !== a.href) {
-                        prevHref = a.href;
-                        a.style.display = 'none';
-                        window.setTimeout(function () {
-                            a.style.display = 'block';
-                        }, 1);
-                    }
-                    // TODO: remove console.log
-                    console.log(x, y, a.href);
-                }, true);
-
-
-                var authorExpand = document.getElementById(id + '-author-contribution-expand-link');
-                var authorCollapse = document.getElementById(id + '-author-contribution-collapse-link');
-                var authorFull = document.getElementById(id + '-author-contribution-full');
-                authorExpand.onclick = function () {
-                    authorExpand.style.display = 'none';
-                    authorFull.style.display = 'inline';
-                };
-                authorCollapse.onclick = function () {
-                    authorExpand.style.display = 'inline';
-                    authorFull.style.display = 'none';
-                };
             }('<?php echo $id; ?>'))
         </script>
         <?php
