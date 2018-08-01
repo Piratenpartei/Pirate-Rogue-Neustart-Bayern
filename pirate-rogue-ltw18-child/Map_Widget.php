@@ -29,8 +29,7 @@ class Map_Widget extends WP_Widget
         echo '<a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank">CC BY-SA 3.0</a>';
         echo ' / basierend auf ';
         echo '<a href="https://commons.wikimedia.org/wiki/File:Bayern-Regierungsbezirke.svg" target="_blank">Wikimedia Commons</a> / ';
-        echo '<a href="https://commons.wikimedia.org/wiki/User:Willtron" target="_blank">Willtron</a> / ';
-        echo '<a href="https://commons.wikimedia.org/wiki/User:NordNordWest" target="_blank">NNW</a>';
+        echo '<a href="https://commons.wikimedia.org/wiki/User:Willtron" target="_blank">Willtron</a>';
         echo '</p>';
         echo $args['after_widget'];
         ?>
