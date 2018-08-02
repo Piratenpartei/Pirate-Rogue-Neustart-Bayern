@@ -92,7 +92,7 @@ class Topic_Widget extends WP_Widget
 
                 function applyImageSize() {
                     var baseStyle = 'display: block; position: absolute;';
-                    baseStyle += 'background: rgba(0,0,0,0.5);';
+                    // for debugging purpose: baseStyle += 'background: rgba(0,0,0,0.5);';
                     linksWrapper.style.width = img.width + 'px';
                     linksWrapper.style.left = ((imgWrapper.offsetWidth - img.width) / 2) + 'px';
 
