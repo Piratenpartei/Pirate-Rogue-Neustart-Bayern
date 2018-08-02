@@ -8,3 +8,10 @@ WordPress Theme für die Landtagswahl 2018 in Bayern basierend auf
 1. ZIP herunterladen: https://github.com/Piratenpartei/Pirate-Rogue/archive/master.zip
 2. In Verzeichnis `pirate-rogue` entpacken
 3. `docker-compose up -d`
+
+### Release erstellen
+
+1. Versionsnummer in [`pirate-rogue-ltw18-child/style.css`](pirate-rogue-ltw18-child/style.css) eintragen
+2. `git commit -m "release" && git tag <version>`
+3. Versionsnummer auf die nächste Snapshot-Version setzten
+4. `git push --tags && git push`

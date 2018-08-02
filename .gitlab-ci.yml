@@ -1,0 +1,13 @@
+stages:
+- deploy
+
+deploy:zip:
+  stage: deploy
+  artifacts:
+    name: "pirate-rogue-ltw18-child"
+    paths:
+    - pirate-rogue-ltw18-child/
+# TODO:
+#  only:
+#  - tags
+  script: echo "store artifact"
