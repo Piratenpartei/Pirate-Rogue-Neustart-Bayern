@@ -45,7 +45,6 @@ class Topic_Widget extends WP_Widget
                 var imgWrapper = document.getElementById(id + '-wrapper');
                 var linksWrapper = document.getElementById(id + '-links');
                 var img = imgWrapper.querySelector('img');
-                // TODO: Update image and coordinates
                 var topicCoords = {
                     'familienpolitik': [
                         [2, 6, 36, 11],
@@ -63,7 +62,7 @@ class Topic_Widget extends WP_Widget
                         [66, 26, 92, 33]
                     ],
                     'bezahlbarerwohnraum': [
-                        [5, 33, 33, 40],
+                        [3, 30, 31, 40],
                         [6, 40, 16, 46]
                     ],
                     'digitalesbayern': [
@@ -84,7 +83,7 @@ class Topic_Widget extends WP_Widget
                     ],
                     'energie': [
                         [2, 83, 11, 88],
-                        [2, 88, 43, 92]
+                        [2, 88, 34, 92]
                     ],
                     'verbraucherunddatenschutz': [
                         [51, 90, 98, 97]
@@ -92,6 +91,8 @@ class Topic_Widget extends WP_Widget
                 };
 
                 function applyImageSize() {
+                    var baseStyle = 'display: block; position: absolute;';
+                    baseStyle += 'background: rgba(0,0,0,0.5);';
                     linksWrapper.style.width = img.width + 'px';
                     linksWrapper.style.left = ((imgWrapper.offsetWidth - img.width) / 2) + 'px';
 
@@ -100,9 +101,8 @@ class Topic_Widget extends WP_Widget
                         if (topicCoords.hasOwnProperty(topic)) {
                             for (var i = 0; i < topicCoords[topic].length; i++) {
                                 var coords = topicCoords[topic][i];
-                                console.log(topic,links[topic]);
                                 linksWrapper.innerHTML += '<a href="' + links[topic] + '" ' +
-                                    'style="display: block; position: absolute; ' +
+                                    'style="' + baseStyle + ' ' +
                                     'left: ' + coords[0] + '%; top: ' + coords[1] + '%;' +
                                     'width: ' + (coords[2] - coords[0]) + '%; height: ' + (coords[3] - coords[1]) + '%;">&nbsp;</a>';
                             }
