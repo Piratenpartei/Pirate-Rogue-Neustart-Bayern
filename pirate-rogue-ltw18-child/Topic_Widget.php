@@ -45,6 +45,7 @@ class Topic_Widget extends WP_Widget
                 var imgWrapper = document.getElementById(id + '-wrapper');
                 var linksWrapper = document.getElementById(id + '-links');
                 var img = imgWrapper.querySelector('img');
+                // TODO: Update image and coordinates
                 var topicCoords = {
                     'familienpolitik': [
                         [2, 6, 36, 11],
@@ -81,7 +82,6 @@ class Topic_Widget extends WP_Widget
                         [25, 75, 39, 84],
                         [39, 77, 79, 83]
                     ],
-                    // TODO: "Energiewirtschaft" --> "Energie"????
                     'energie': [
                         [2, 83, 11, 88],
                         [2, 88, 43, 92]
