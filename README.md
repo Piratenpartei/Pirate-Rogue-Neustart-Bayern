@@ -14,4 +14,4 @@ WordPress Theme für die Landtagswahl 2018 in Bayern basierend auf
 1. Versionsnummer in [`pirate-rogue-ltw18-child/style.css`](pirate-rogue-ltw18-child/style.css) eintragen
 2. `git commit -m "release" && git tag <version>`
 3. Versionsnummer auf die nächste Snapshot-Version setzten
-4. `git push --tags && git push`
+4. `git commit -m "set next development version" && git push --tags && git push`
