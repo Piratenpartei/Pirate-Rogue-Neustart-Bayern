@@ -4,10 +4,9 @@ stages:
 deploy:zip:
   stage: deploy
   artifacts:
-    name: "pirate-rogue-ltw18-child"
+    name: pirate-rogue-ltw18-$CI_COMMIT_REF_NAME
     paths:
     - pirate-rogue-ltw18-child/
-# TODO:
-#  only:
-#  - tags
+  only:
+  - tags
   script: echo "store artifact"
