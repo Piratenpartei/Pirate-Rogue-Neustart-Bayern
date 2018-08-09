@@ -19,6 +19,7 @@
 #overlay-open {
     top: 3px;
 }
+
 #overlay-close {
     top: 5px;
 }
@@ -140,6 +141,18 @@ h1.entry-title,
     border-top-width: 0;
 }
 
+#sidebar-page {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+@media screen and (max-width: 25em) {
+    /* exceptionally not mobile first in this case */
+    .footer-menu {
+        width: 100%;
+    }
+}
+
 @media screen and (min-width: 25em) {
     #masthead .site-title {
         background-size: auto 100%;
@@ -163,6 +176,7 @@ h1.entry-title,
     #overlay-open {
         top: 34px;
     }
+
     #overlay-close {
         top: 40px;
     }
@@ -170,6 +184,7 @@ h1.entry-title,
     #masthead .site-title {
         margin: 70px 0;
     }
+
     #masthead .overlay-title-wrap .site-title {
         margin: 10px;
     }
@@ -200,6 +215,11 @@ h1.entry-title,
 
     .widget h2.widget-title {
         border-top-width: 1px;
+    }
+
+    #sidebar-page {
+        padding-top: 40px;
+        padding-bottom: 70px;
     }
 }
 
@@ -246,4 +266,17 @@ h1.entry-title,
 .widget_pirate_rouge_ltw18_map_widget .author-contribution {
     font-size: 0.5em;
     text-align: right;
+}
+
+.content-wrap h1,
+.content-wrap h2,
+.content-wrap h3,
+.content-wrap h4,
+.content-wrap h5,
+.content-wrap h6 {
+    padding-top: 120px;
+    margin-top: -120px;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    display: inline-block;
 }

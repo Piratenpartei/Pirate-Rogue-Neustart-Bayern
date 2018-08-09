@@ -11,6 +11,7 @@ WordPress Theme für die Landtagswahl 2018 in Bayern basierend auf
 
 ### Release erstellen
 
+1. `CHANGELOG.md` aktualisieren
 1. Versionsnummer in [`pirate-rogue-ltw18-child/style.css`](pirate-rogue-ltw18-child/style.css) eintragen
 2. `git add pirate-rogue-ltw18-child/style.css && git commit -m "release" && git tag <version>`
 3. Versionsnummer auf die nächste Snapshot-Version setzten
