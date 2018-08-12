@@ -69,7 +69,8 @@ function sticky_sidebar_enqueue_scripts()
                 window.stickySidebar = new StickySidebar(sidebarEl, {
                     containerSelector: '#blog-wrap',
                     resizeSensor: true,
-                    topSpacing: 120
+                    topSpacing: 130,
+                    minWidth: 1060
                 });
             }
         };
