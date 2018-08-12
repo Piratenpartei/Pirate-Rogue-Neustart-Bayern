@@ -35,3 +35,22 @@ set_theme_mod('pirate_rogue_credit',
         $blogname
     )
 );
+
+
+function socialMetaHead()
+{ ?>
+    <meta property="og:url" content="https://neustart.bayern/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NEUSTART.BAYERN" />
+    <meta property="og:description" content="Piratenpartei Bayern" />
+    <meta property="og:image" content="https://design2018.neustart-bayern.de/static/social-media/Facebook-Titelbild-Neustart.png" />
+    <meta property="og:image:width" content="820" />
+    <meta property="og:image:height" content="312" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@PiratenBayern" />
+    <meta name="twitter:title" content="NEUSTART.BAYERN" />
+    <meta name="twitter:description" content="Piratenpartei Bayern" />
+    <meta name="twitter:image" content="https://design2018.neustart-bayern.de/static/social-media/Facebook-Titelbild-Neustart.png" />
+<?php }
+
+add_action('wp_head', 'socialMetaHead');

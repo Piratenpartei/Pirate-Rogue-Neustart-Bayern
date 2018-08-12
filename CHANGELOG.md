@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Preceding links was not clickable anymore
     - Sequencing headlines collapsed to one line if enough space was available
 
+### Added
+- Added social media meta tags (with hard coded values) #1
+
 ## [0.0.3] - 2018-08-09
 ### Added
 - Added new page template "Collapsed Header" which automatically scrolls down to the page content
