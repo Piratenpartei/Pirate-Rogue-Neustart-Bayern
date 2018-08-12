@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fixed headline layout bug
     - Preceding links was not clickable anymore
     - Sequencing headlines collapsed to one line if enough space was available
+- Fixes issue that the collapsed header template sometime doesn't show the sticky header
 
 ### Added
 - Added social media meta tags (with hard coded values) #1
