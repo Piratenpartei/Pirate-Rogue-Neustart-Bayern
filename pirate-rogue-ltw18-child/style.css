@@ -268,15 +268,7 @@ h1.entry-title,
     text-align: right;
 }
 
-.content-wrap h1,
-.content-wrap h2,
-.content-wrap h3,
-.content-wrap h4,
-.content-wrap h5,
-.content-wrap h6 {
+.anchor {
     padding-top: 120px;
     margin-top: -120px;
-    -webkit-background-clip: content-box;
-    background-clip: content-box;
-    display: inline-block;
 }
