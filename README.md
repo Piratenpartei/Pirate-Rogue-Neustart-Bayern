@@ -16,3 +16,8 @@ WordPress Theme für die Landtagswahl 2018 in Bayern basierend auf
 2. `git add pirate-rogue-ltw18-child/style.css && git commit -m "release" && git tag <version>`
 3. Versionsnummer auf die nächste Snapshot-Version setzten
 4. `git add pirate-rogue-ltw18-child/style.css && git commit -m "set next development version" && git push --tags && git push`
+
+## Verwendete Bibliotheken
+
+- [Sticky Sidebar](https://github.com/abouolia/sticky-sidebar)
+- `ResizeSensor` aus [CSS Element Queries](https://github.com/marcj/css-element-queries)
