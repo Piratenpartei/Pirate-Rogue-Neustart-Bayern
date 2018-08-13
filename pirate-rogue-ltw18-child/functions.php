@@ -59,9 +59,9 @@ add_action('wp_head', 'socialMetaHead');
 
 function sticky_sidebar_enqueue_scripts()
 {
+    echo '<script src="' . get_stylesheet_directory_uri() . '/js/css-element-queries-1.0.1/ResizeSensor.js"></script>';
+    echo '<script src="' . get_stylesheet_directory_uri() . '/js/sticky-sidebar-3.2.0/sticky-sidebar.js"></script>';
     ?>
-    <script src="<? echo get_stylesheet_directory_uri() ?>/js/css-element-queries-1.0.1/ResizeSensor.js"></script>
-    <script src="<? echo get_stylesheet_directory_uri() ?>/js/sticky-sidebar-3.2.0/sticky-sidebar.js"></script>
     <script>
         window.onload = function () {
             var sidebarEl = document.getElementById('sidebar-page');
